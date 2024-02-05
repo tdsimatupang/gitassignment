@@ -10,11 +10,11 @@ def import_data():
     return pd.read_csv('ttc-bus-delay-data-2023.csv')
 
 
-def compute_avg_delay(data):
+def compute_avg_delay(data, group_by: str = 'Route'):
     """
-    Compute the average delay for each route
+    Compute the average delay aggregated by specified column
     """
-    return data.groupby('Route').mean().reset_index()
+    return data.groupby(group_by).mean().reset_index()
 
 
 def main():
