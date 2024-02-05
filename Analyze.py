@@ -22,7 +22,7 @@ def main():
     Main function
     """
     data = import_data()
-    avg_delay = compute_avg_delay(data)
+    avg_delay = compute_avg_delay(data, group_by='Route')
 
     plt.hist(avg_delay['Min Delay'], bins=30)
     plt.title('Average Delay Distribution')
